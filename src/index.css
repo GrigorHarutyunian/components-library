@@ -1,0 +1,17 @@
+:root {
+  --components-library-spacing: 8px;
+  --components-library-color-primary-text: #ffffff;
+  --components-library-color-inherite: #e0e0e0;
+  --components-library-color-primary: #1976d2;
+  --components-library-color-primary-dark: #1565c0;
+  --components-library-color-primary-light: #42a5f5;
+  --components-library-color-secondary: #9c27b0;
+  --components-library-color-secondary-dark: #73338e;
+  --components-library-color-secondary-light: #ba68c8;
+  --components-library-color-success: #2e7d32;
+  --components-library-color-success-dark: #1b5e20;
+  --components-library-color-success-light: #4caf50;
+  --components-library-color-error: #d32f2f;
+  --components-library-color-error-dark: #c62828;
+  --components-library-color-error-light: #ef5350;
+}
