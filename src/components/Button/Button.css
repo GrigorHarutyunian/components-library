@@ -1,0 +1,129 @@
+.button {
+  margin: var(--components-library-spacing);
+  /* border-radius: 4px; */
+  border: 0;
+  border-radius: 4px;
+  color: var(--components-library-color-primary-text);
+  font-weight: 600;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+a.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.button.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.button--small {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.button--medium {
+  padding: 8px 16px;
+  font-size: 13px;
+}
+
+.button--large {
+  padding: 12px 24px;
+  font-size: 15px;
+}
+
+.button--primary {
+  background-color: var(--components-library-color-primary);
+  --button-color: var(--components-library-color-primary);
+  --button-color-light: var(--components-library-color-primary-light);
+}
+.button--primary.button--contained:hover {
+  background-color: var(--components-library-color-primary-dark);
+}
+.button--secondary {
+  background-color: var(--components-library-color-secondary);
+  --button-color: var(--components-library-color-secondary);
+  --button-color-light: var(--components-library-color-secondary-light);
+}
+.button--secondary.button--contained:hover {
+  background-color: var(--components-library-color-secondary-dark);
+}
+
+.button--success {
+  background-color: var(--components-library-color-success);
+  --button-color: var(--components-library-color-success);
+  --button-color-light: var(--components-library-color-success-light);
+}
+.button--success.button--contained:hover {
+  background-color: var(--components-library-color-success-dark);
+}
+.button--error {
+  background-color: var(--components-library-color-error);
+  --button-color: var(--components-library-color-error);
+  --button-color-light: var(--components-library-color-error-light);
+}
+.button--error.button--contained:hover {
+  background-color: var(--components-library-color-error-dark);
+}
+
+.button--contained {
+  box-shadow:
+    0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.button--contained:hover {
+  box-shadow:
+    0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.button--contained:active {
+  transform: scale(0.95);
+  filter: brightness(0.8);
+}
+
+.button--outlined {
+  background-color: transparent;
+  border: 1px solid color-mix(in srgb, var(--button-color) 40%, transparent);
+  box-shadow: none;
+  color: var(--button-color);
+}
+.button--outlined:hover {
+  border: 1px solid var(--button-color);
+}
+.button--outlined:active {
+  transform: scale(0.95);
+  filter: brightness(0.8);
+}
+.button--text {
+  background-color: transparent;
+  color: var(--button-color);
+}
+.button--text:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--button-color-light) 20%,
+    transparent
+  );
+  color: var(--button-color);
+}
+.button--text:active {
+  transform: scale(0.95);
+  filter: brightness(0.8);
+}
