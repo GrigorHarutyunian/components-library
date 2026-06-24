@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-.cl-modal-child {
+.cl-modal__content {
   background-color: rgb(255, 255, 255);
   width: 400px;
   padding: 25px;
