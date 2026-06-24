@@ -3,15 +3,18 @@ import "./Modal.css";
 
 interface IModalProps {
   open: boolean;
-  onClose: any;
+  onClose: () => void;
+  children: React.ReactNode;
 }
 
-const Modal = ({ open, onClose }: IModalProps) => {
+const Modal = ({ open, onClose, children }: IModalProps) => {
   const modal = (
     <div onClick={onClose} className="cl-modal">
-      <div className="cl-modal-child" onClick={(e: any) => e.stopPropagation()}>
-        <h1>Modal Header</h1>
-        <p>Modal Contnet</p>
+      <div
+        className="cl-modal__content"
+        onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
+      >
+        {children}
       </div>
     </div>
   );
