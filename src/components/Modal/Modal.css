@@ -1,13 +1,17 @@
 .cl-modal {
   position: fixed;
+  inset: 0px;
+}
+.cl-modal__backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
   right: 0;
   bottom: 0;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .cl-modal__content {
