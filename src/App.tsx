@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Button from "./components/Button/Button";
 import Modal from "./components/Modal/Modal";
+import CountDown from "./components/CountDown/CountDown";
 
 function App() {
   const [open, setOpen] = useState<boolean>(false);
@@ -66,6 +67,7 @@ function App() {
       >
         Large
       </Button>
+      <CountDown date={new Date("2026-06-26  00:07:00")} />
     </>
   );
 }
