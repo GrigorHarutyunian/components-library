@@ -5,13 +5,29 @@ import Modal from "./components/Modal/Modal";
 
 function App() {
   const [open, setOpen] = useState<boolean>(false);
+  const [openChild, setOpenChild] = useState<boolean>(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const handleOpenChild = () => setOpenChild(true);
+  const handleCloseChild = () => setOpenChild(false);
   return (
     <>
-      <Modal open={open} onClose={handleClose}>
+      <Modal open={open} onClose={handleClose} className="mod">
         <h1>Modal Header</h1>
         <p>Modal Content</p>
+        <Button
+          size="medium"
+          color="secondary"
+          variant="contained"
+          href=""
+          onClick={handleOpenChild}
+        >
+          Medium
+        </Button>
+      </Modal>
+      <Modal open={openChild} onClose={handleCloseChild} className="mod-child">
+        <h1>Child Modal Header</h1>
+        <p>Child Modal Content</p>
       </Modal>
       <Button
         size="small"
