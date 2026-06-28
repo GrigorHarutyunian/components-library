@@ -1,37 +1,84 @@
 import { useEffect, useState } from "react";
+import type { Color } from "../../models";
+
 import { SECOND_MS, MINUTE_MS, HOUR_MS, DAY_MS } from "../../utils";
+import { formatTime } from "./formatTime";
 import "./CountDown.css";
+import clsx from "clsx";
 interface ICountDownProps {
   date: Date;
   children?: any;
+  color?: Color;
+  sizeNumber?: string;
+  sizeLabel?: string;
+  containerWidth: string;
+  className?: string;
 }
-
-const CountDown = ({ date }: ICountDownProps) => {
-  const [dateNow, setDateNow] = useState(new Date().getTime());
+const getRemainingTime = (date: Date) =>
+  Math.max(date.getTime() - Date.now(), 0);
+const CountDown = ({
+  date,
+  color,
+  sizeNumber,
+  sizeLabel,
+  containerWidth,
+  className,
+}: ICountDownProps) => {
+  const [remainingTime, setRemainingTime] = useState<number>(
+    getRemainingTime(date),
+  );
 
   useEffect(() => {
-    const id = setInterval(() => {
-      const diff = date.getTime() - Date.now();
+    const intervalId = setInterval(() => {
+      const newDiff = getRemainingTime(date);
 
-      if (diff <= 0) {
-        clearInterval(id);
-        return;
+      setRemainingTime(newDiff);
+
+      if (newDiff === 0) {
+        clearInterval(intervalId);
       }
-
-      setDateNow(Date.now());
     }, 1000);
 
-    return () => clearInterval(id);
+    return () => clearInterval(intervalId);
   }, [date]);
-  const dif = date.getTime() - dateNow;
-  const days = Math.floor(dif / DAY_MS);
-  const hours = Math.floor((dif / HOUR_MS) % 24);
-  const minutes = Math.floor((dif / MINUTE_MS) % 60);
-  const seconds = Math.floor((dif / SECOND_MS) % 60);
+
+  const days = Math.floor(remainingTime / DAY_MS);
+  const hours = Math.floor((remainingTime / HOUR_MS) % 24);
+  const minutes = Math.floor((remainingTime / MINUTE_MS) % 60);
+  const seconds = Math.floor((remainingTime / SECOND_MS) % 60);
 
   return (
-    <div>
-      {days}:{hours}:{minutes}:{seconds}
+    <div
+      className={clsx(className, `cl-countdown`, `cl-countdown--${color}`)}
+      style={
+        {
+          "--cl-countdown-width": containerWidth,
+          "--cl-countdown-number-size": sizeNumber,
+          "--cl-countdown-label-size": sizeLabel,
+        } as React.CSSProperties
+      }
+    >
+      <div className="cl-countdown__items-container">
+        <div className="cl-countdown__item">
+          <div className="cl-countdown__number">{formatTime(days)}</div>
+          <div className="cl-countdown__label">DAYS</div>
+        </div>
+
+        <div className="cl-countdown__item">
+          <div className="cl-countdown__number">{formatTime(hours)}</div>
+          <div className="cl-countdown__label">HOURS</div>
+        </div>
+
+        <div className="cl-countdown__item">
+          <div className="cl-countdown__number">{formatTime(minutes)}</div>
+          <div className="cl-countdown__label">MINUTES</div>
+        </div>
+
+        <div className="cl-countdown__item">
+          <div className="cl-countdown__number">{formatTime(seconds)}</div>
+          <div className="cl-countdown__label">SECONDS</div>
+        </div>
+      </div>
     </div>
   );
 };

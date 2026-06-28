@@ -67,7 +67,16 @@ function App() {
       >
         Large
       </Button>
-      <CountDown date={new Date("2026-06-26  00:07:00")} />
+
+      <CountDown
+        // date={new Date("2026-06-29  11:11:00")}
+        date={new Date(Date.now() + 1 * 60 * 1000)}
+        color="error"
+        sizeNumber="100px"
+        sizeLabel="18px"
+        containerWidth="50%"
+        className="aaa"
+      />
     </>
   );
 }
