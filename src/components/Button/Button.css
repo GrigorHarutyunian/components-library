@@ -54,7 +54,7 @@ a.button {
 }
 .button--secondary {
   background-color: var(--components-library-color-secondary);
-  --button-color: var(--components-library-color-secondary);
+
   --button-color-light: var(--components-library-color-secondary-light);
 }
 .button--secondary.button--contained:hover {
