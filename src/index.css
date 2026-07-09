@@ -14,4 +14,10 @@
   --components-library-color-error: #d32f2f;
   --components-library-color-error-dark: #c62828;
   --components-library-color-error-light: #ef5350;
+  --components-library-color-warning: #ffcd6c;
+  --components-library-color-warning-dark: #f5b84f;
+  --components-library-color-warning-light: #ffeed9;
+  --components-library-color-info: #8ab4f8;
+  --components-library-color-info-dark: #5b8de3;
+  --components-library-color-info-light: #e5edff;
 }
