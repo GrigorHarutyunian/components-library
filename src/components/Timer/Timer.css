@@ -40,95 +40,46 @@
 .cl-timer--primary {
   background-color: var(--components-library-color-primary-light);
   --background-color: var(--components-library-color-primary);
-}
-
-.cl-timer--primary .cl-timer__buttons button {
-  background-color: var(--components-library-color-primary);
-}
-
-.cl-timer--primary .cl-timer__ring {
-  stroke: var(--components-library-color-primary-light);
-  filter: brightness(0.95);
-}
-
-.cl-timer--primary .cl-timer__track {
-  stroke: var(--components-library-color-primary);
+  --background-color-light: var(--components-library-color-primary-light);
 }
 
 .cl-timer--secondary {
   background-color: var(--components-library-color-secondary-light);
   --background-color: var(--components-library-color-secondary);
-}
-.cl-timer--secondary .cl-timer__buttons button {
-  background-color: var(--components-library-color-secondary);
-}
-
-.cl-timer--secondary .cl-timer__ring {
-  stroke: var(--components-library-color-secondary-light);
-  filter: brightness(0.95);
-}
-
-.cl-timer--secondary .cl-timer__track {
-  stroke: var(--components-library-color-secondary);
+  --background-color-light: var(--components-library-color-secondary-light);
 }
 
 .cl-timer--success {
   background-color: var(--components-library-color-success-light);
   --background-color: var(--components-library-color-success);
-}
-.cl-timer--success .cl-timer__buttons button {
-  background-color: var(--components-library-color-success);
-}
-
-.cl-timer--success .cl-timer__ring {
-  stroke: var(--components-library-color-success-light);
-  filter: brightness(0.95);
-}
-
-.cl-timer--success .cl-timer__track {
-  stroke: var(--components-library-color-success);
+  --background-color-light: var(--components-library-color-success-light);
 }
 
 .cl-timer--error {
   background-color: var(--components-library-color-error-light);
   --background-color: var(--components-library-color-error);
-}
-.cl-timer--error .cl-timer__buttons button {
-  background-color: var(--components-library-color-error);
-}
-
-.cl-timer--error .cl-timer__ring {
-  stroke: var(--components-library-color-error-light);
-  filter: brightness(0.95);
-}
-
-.cl-timer--error .cl-timer__track {
-  stroke: var(--components-library-color-error);
+  --background-color-light: var(--components-library-color-error-light);
 }
 
 .cl-timer--warning {
   background-color: var(--components-library-color-warning-light);
   --background-color: var(--components-library-color-warning);
-}
-.cl-timer--warning .cl-timer__buttons button {
-  background-color: var(--components-library-color-warning);
-}
-
-.cl-timer--warning .cl-timer__ring {
-  stroke: var(--components-library-color-warning-light);
-  filter: brightness(0.95);
-}
-
-.cl-timer--warning .cl-timer__track {
-  stroke: var(--components-library-color-warning-dark);
+  --background-color-light: var(--components-library-color-warning-light);
 }
 
 .cl-timer--info {
   background-color: var(--components-library-color-info-light);
   --background-color: var(--components-library-color-info);
+  --background-color-light: var(--components-library-color-info-light);
 }
-.cl-timer--info .cl-timer__buttons button {
-  background-color: var(--components-library-color-info);
+
+.cl-timer__ring {
+  stroke: var(--background-color-light);
+  filter: brightness(0.95);
+}
+
+.cl-timer__track {
+  stroke: var(--background-color);
 }
 
 /* CL-TIMER  HEADER*/
@@ -154,6 +105,12 @@
   width: 100%;
   padding: 12px 16px;
   border-radius: 30px;
+  background-color: var(--background-color);
+}
+
+.cl-timer .cl-timer__buttons button:hover {
+  background-color: none; /* or your theme color */
+  filter: brightness(0.92);
 }
 
 button svg {
@@ -161,11 +118,6 @@ button svg {
   height: 20px;
   fill: rgb(0, 0, 0);
   vertical-align: middle;
-}
-
-.cl-timer .cl-timer__buttons button:hover {
-  background-color: none; /* or your theme color */
-  filter: brightness(0.92);
 }
 
 /* CL-TIMER  CONTENT*/
@@ -224,15 +176,6 @@ button svg {
   transform: rotate(-90deg);
   transform-origin: center;
   transition: stroke-dashoffset 0.3s linear;
-}
-
-.cl-timer--info .cl-timer__ring {
-  stroke: var(--components-library-color-info-light);
-  filter: brightness(0.95);
-}
-
-.cl-timer--info .cl-timer__track {
-  stroke: var(--components-library-color-info);
 }
 
 @keyframes timer-animation {

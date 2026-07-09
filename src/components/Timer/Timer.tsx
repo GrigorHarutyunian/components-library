@@ -87,9 +87,10 @@ const Timer = ({ activeColor, pausedColor, endDate }: ITimerProps) => {
 
   const handleAddTime = (minutes: number) => {
     const addedTime = minutes * 60 * 1000;
+    const newTime = remainingTime + addedTime;
 
-    setInitialRemainingTime((time) => time + addedTime);
-    setRemainingTime((time) => time + addedTime);
+    setRemainingTime(newTime);
+    setInitialRemainingTime(newTime);
   };
 
   useEffect(() => {
