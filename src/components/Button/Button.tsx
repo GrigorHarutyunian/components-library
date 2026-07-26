@@ -3,10 +3,10 @@ import type { Size, Color, Variant } from "../../models";
 import "./Button.css";
 import type { ReactNode } from "react";
 interface IButtonProps {
-  size: Size;
-  color: Color;
-  variant: Variant;
-  href: string;
+  size?: Size;
+  color?: Color;
+  variant?: Variant;
+  href?: string;
   disabled?: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
   children: ReactNode;
@@ -23,6 +23,7 @@ const Button = ({
   disabled,
   className,
 }: IButtonProps) => {
+
   const classes = clsx(
     className,
     `cl-button`,

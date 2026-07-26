@@ -1,0 +1,42 @@
+.cl-countdown {
+  width: var(--cl-countdown-width);
+  display: flex;
+  flex-direction: column;
+}
+.cl-countdown__items-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+.cl-countdown__buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.cl-countdown__item {
+  text-align: center;
+  width: 20%;
+  font-weight: 700;
+}
+.cl-countdown__number {
+  font-size: var(--cl-countdown-number-size);
+  background-color: #343650;
+  border-radius: 10px;
+}
+.cl-countdown__label {
+  margin-top: 10px;
+  font-size: var(--cl-countdown-label-size);
+}
+.cl-countdown--primary {
+  color: var(--components-library-color-primary);
+}
+.cl-countdown--secondary {
+  color: var(--components-library-color-secondary);
+}
+.cl-countdown--success {
+  color: var(--components-library-color-success);
+}
+
+.cl-countdown--error {
+  color: var(--components-library-color-error);
+}

@@ -50,7 +50,7 @@ a.cl-button {
   --button-color: var(--components-library-color-primary);
   --button-color-light: var(--components-library-color-primary-light);
 }
-.cl-button--primary.button--contained:hover {
+.cl-button--primary.cl-button--contained:hover {
   background-color: var(--components-library-color-primary-dark);
 }
 .cl-button--secondary {
@@ -58,7 +58,7 @@ a.cl-button {
   --button-color: var(--components-library-color-secondary);
   --button-color-light: var(--components-library-color-secondary-light);
 }
-.cl-button--secondary.button--contained:hover {
+.cl-button--secondary.cl-button--contained:hover {
   background-color: var(--components-library-color-secondary-dark);
 }
 
@@ -67,7 +67,7 @@ a.cl-button {
   --button-color: var(--components-library-color-success);
   --button-color-light: var(--components-library-color-success-light);
 }
-.cl-button--success.button--contained:hover {
+.cl-button--success.cl-button--contained:hover {
   background-color: var(--components-library-color-success-dark);
 }
 .cl-button--error {
@@ -75,7 +75,7 @@ a.cl-button {
   --button-color: var(--components-library-color-error);
   --button-color-light: var(--components-library-color-error-light);
 }
-.cl-button--error.button--contained:hover {
+.cl-button--error.cl-button--contained:hover {
   background-color: var(--components-library-color-error-dark);
 }
 
@@ -127,3 +127,4 @@ a.cl-button {
   transform: scale(0.95);
   filter: brightness(0.8);
 }
+
