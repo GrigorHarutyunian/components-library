@@ -10,6 +10,7 @@ interface IButtonProps {
   disabled?: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
   children: ReactNode;
+  className?: string;
 }
 
 const Button = ({
@@ -20,23 +21,25 @@ const Button = ({
   href,
   onClick,
   disabled,
+  className,
 }: IButtonProps) => {
-  const className = clsx(
-    "button",
-    `button--${size}`,
-    `button--${color}`,
-    `button--${variant}`,
+  const classes = clsx(
+    className,
+    `cl-button`,
+    `cl-button--${size}`,
+    `cl-button--${color}`,
+    `cl-button--${variant}`,
     {
       "is-disabled": disabled,
     },
   );
 
   return href ? (
-    <a className={className} href={href} onClick={onClick}>
+    <a className={classes} href={href} onClick={onClick}>
       {children}
     </a>
   ) : (
-    <button className={className} disabled={disabled} onClick={onClick}>
+    <button className={classes} disabled={disabled} onClick={onClick}>
       {children}
     </button>
   );
