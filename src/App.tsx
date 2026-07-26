@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Button from "./components/Button/Button";
 import Modal from "./components/Modal/Modal";
-
+import Timer from "./components/Timer/Timer";
 function App() {
   const [open, setOpen] = useState<boolean>(false);
   const [openChild, setOpenChild] = useState<boolean>(false);
@@ -82,6 +82,12 @@ function App() {
       >
         Large
       </Button>
+      <Timer
+        key={new Date(Date.now() + 1 * 60 * 1000) + ""}
+        endDate={new Date(Date.now() + 0.1 * 60 * 1000 + 1000)}
+        activeColor="info"
+        pausedColor="warning"
+      />
     </>
   );
 }

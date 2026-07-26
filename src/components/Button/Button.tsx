@@ -4,7 +4,7 @@ import "./Button.css";
 import type { ReactNode } from "react";
 interface IButtonProps {
   size: Size;
-  color: Color;
+  color?: Color;
   variant: Variant;
   href: string;
   disabled?: boolean;

@@ -10,7 +10,6 @@
   text-transform: uppercase;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   cursor: pointer;
-
   transition: all 0.3s ease;
 }
 
@@ -55,7 +54,7 @@ a.cl-button {
 }
 .cl-button--secondary {
   background-color: var(--components-library-color-secondary);
-  --button-color: var(--components-library-color-secondary);
+
   --button-color-light: var(--components-library-color-secondary-light);
 }
 .cl-button--secondary.button--contained:hover {
