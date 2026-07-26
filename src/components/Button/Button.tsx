@@ -22,10 +22,10 @@ const Button = ({
   disabled,
 }: IButtonProps) => {
   const className = clsx(
-    "button",
-    `button--${size || "medium"}`,
-    `button--${color || "primary"}`,
-    `button--${variant || "contained"}`,
+    `cl-button`,
+    `cl-button--${size}`,
+    `cl-button--${color}`,
+    `cl-button--${variant}`,
     {
       "is-disabled": disabled,
     },
